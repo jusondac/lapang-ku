@@ -1,8 +1,8 @@
 class CreateRentMemberships < ActiveRecord::Migration[7.0]
   def change
     create_table :rent_memberships do |t|
-      t.references :membership, null: false, foreign_key: true
-      t.references :rent, null: false, foreign_key: true
+      t.integer :membership_id, null: false
+      t.integer :rent_id, null: false
 
       t.timestamps
     end
