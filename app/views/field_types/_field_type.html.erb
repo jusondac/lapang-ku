@@ -1,0 +1,17 @@
+<div id="<%= dom_id field_type %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Name:</strong>
+    <%= field_type.name %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Price:</strong>
+    <%= field_type.price %>
+  </p>
+
+  <% if action_name != "show" %>
+    <%= link_to "Show this field type", field_type, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to "Edit this field type", edit_field_type_path(field_type), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>
