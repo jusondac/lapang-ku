@@ -75,3 +75,6 @@ group :test do
 end
 
 gem "awesome_print", "~> 1.9"
+
+
+gem "byebug", "~> 11.1"
