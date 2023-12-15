@@ -3,7 +3,7 @@ class FieldsController < ApplicationController
 
   # GET /fields or /fields.json
   def index
-    @fields = Field.all
+    @pagy, @fields = pagy(Field.all)
   end
 
   # GET /fields/1 or /fields/1.json

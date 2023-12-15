@@ -3,7 +3,7 @@ class CreateTypeMemberships < ActiveRecord::Migration[7.0]
     create_table :type_memberships do |t|
       t.string :name
       t.integer :discount
-
+      t.integer :charge
       t.timestamps
     end
   end

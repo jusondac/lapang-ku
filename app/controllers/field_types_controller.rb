@@ -3,7 +3,7 @@ class FieldTypesController < ApplicationController
 
   # GET /field_types or /field_types.json
   def index
-    @field_types = FieldType.all
+    @pagy, @field_types = pagy(FieldType.all)
   end
 
   # GET /field_types/1 or /field_types/1.json
@@ -58,13 +58,14 @@ class FieldTypesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_field_type
-      @field_type = FieldType.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def field_type_params
-      params.require(:field_type).permit(:name, :price)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_field_type
+    @field_type = FieldType.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def field_type_params
+    params.require(:field_type).permit(:name, :price)
+  end
 end

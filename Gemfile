@@ -78,3 +78,5 @@ gem "awesome_print", "~> 1.9"
 
 
 gem "byebug", "~> 11.1"
+
+gem "pagy", "~> 6.2"

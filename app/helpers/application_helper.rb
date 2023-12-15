@@ -1,4 +1,6 @@
 module ApplicationHelper
+  include Pagy::Frontend
+
   def navigation
     n = []
     r = Rails.application.routes.named_routes.helper_names
@@ -8,6 +10,6 @@ module ApplicationHelper
   end
 
   def navigation_extract(str)
-    str.gsub('_path','').split('_').join(' ').capitalize
+    str.gsub("_path", "").split("_").join(" ").capitalize
   end
 end

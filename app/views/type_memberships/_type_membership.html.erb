@@ -12,6 +12,9 @@
   <td class="px-6 py-4">
     <%= type_membership.discount %>
   </th>
+  <td class="px-6 py-4">
+    <%= number_to_currency(type_membership.charge, unit: 'Rp.') %>
+  </th>
   <td class="flex items-center px-6 py-4">
     <%= link_to "Edit", edit_type_membership_path(type_membership), class: "font-medium text-blue-600 dark:text-blue-500 hover:underline" %>
     <%= button_to "Remove" , type_membership, method: :delete, data: {confirm: "Apakah kamu yakin?"},class:'font-medium text-red-600 dark:text-red-500 hover:underline ms-3'%>
