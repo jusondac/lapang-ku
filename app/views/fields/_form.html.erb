@@ -18,7 +18,7 @@
 
   <div class="my-5">
     <%= form.label :field_type_id %>
-    <%= form.text_field :field_type_id, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    <%= form.collection_select :field_type_id, FieldType.all, :id, :name, {prompt: "choose field type"}, class:'block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full' %>
   </div>
 
   <div class="inline">
