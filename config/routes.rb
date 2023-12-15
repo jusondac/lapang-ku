@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :orders
   resources :rent_details
   resources :rents
   resources :rent_memberships
