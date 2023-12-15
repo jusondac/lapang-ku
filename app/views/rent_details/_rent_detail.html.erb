@@ -1,0 +1,17 @@
+<div id="<%= dom_id rent_detail %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Hours:</strong>
+    <%= rent_detail.hours %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Membership:</strong>
+    <%= rent_detail.membership_id %>
+  </p>
+
+  <% if action_name != "show" %>
+    <%= link_to "Show this rent detail", rent_detail, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to "Edit this rent detail", edit_rent_detail_path(rent_detail), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>
