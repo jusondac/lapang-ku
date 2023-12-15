@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :type_memberships
   resources :fields
   resources :field_types
   get 'home/index'
