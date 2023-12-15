@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :rents
   resources :rent_memberships
   resources :memberships
   resources :type_memberships
