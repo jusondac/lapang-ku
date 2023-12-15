@@ -1,0 +1,17 @@
+<div id="<%= dom_id type_membership %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Name:</strong>
+    <%= type_membership.name %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Discount:</strong>
+    <%= type_membership.discount %>
+  </p>
+
+  <% if action_name != "show" %>
+    <%= link_to "Show this type membership", type_membership, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to "Edit this type membership", edit_type_membership_path(type_membership), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>

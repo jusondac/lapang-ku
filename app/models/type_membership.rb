@@ -1,0 +1,2 @@
+class TypeMembership < ApplicationRecord
+end
