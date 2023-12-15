@@ -9,7 +9,7 @@
     <%= field_type.name %>
   </th>
   <td class="px-6 py-4">
-    <%= field_type.price %>
+    <%= number_to_currency(field_type.price, unit:'Rp.') %>
   </td>
   <td class="flex items-center px-6 py-4">
     <%= link_to "Edit", edit_field_type_path(field_type), class: "font-medium text-blue-600 dark:text-blue-500 hover:underline" %>
