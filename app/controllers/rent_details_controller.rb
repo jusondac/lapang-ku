@@ -3,7 +3,7 @@ class RentDetailsController < ApplicationController
 
   # GET /rent_details or /rent_details.json
   def index
-    @rent_details = RentDetail.all
+    @pagy, @rent_details = pagy(RentDetail.all)
   end
 
   # GET /rent_details/1 or /rent_details/1.json
@@ -58,13 +58,14 @@ class RentDetailsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_rent_detail
-      @rent_detail = RentDetail.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def rent_detail_params
-      params.require(:rent_detail).permit(:hours, :membership_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_rent_detail
+    @rent_detail = RentDetail.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def rent_detail_params
+    params.require(:rent_detail).permit(:hours, :membership_id)
+  end
 end

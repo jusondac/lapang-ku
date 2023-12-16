@@ -61,8 +61,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_15_024404) do
   end
 
   create_table "rent_details", force: :cascade do |t|
-    t.time "hours"
-    t.bigint "membership_id", null: false
+    t.integer "hours"
+    t.bigint "membership_id"
+    t.string "behalf"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["membership_id"], name: "index_rent_details_on_membership_id"
