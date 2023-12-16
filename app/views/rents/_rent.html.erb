@@ -9,9 +9,15 @@
     <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
       <%= rent.field.name %>
     </th>
-    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+    <td class="px-6 py-4">
       <%= rent.field.field_type.name %>
-    </th>
+    </td>
+    <td class="px-6 py-4">
+      <%= rent.rent_detail&.behalf %>
+    </td>
+    <td class="px-6 py-4">
+      <%= rent.created_at.strftime("%d %B, %Y") %>
+    </td>
     <td class="px-6 py-4">
       <%= rent.start.strftime("%I:%M %p") %>
     </td>
