@@ -3,7 +3,7 @@ class RentsController < ApplicationController
 
   # GET /rents or /rents.json
   def index
-    @rents = Rent.all
+    @pagy, @rents = pagy(Rent.all)
   end
 
   # GET /rents/1 or /rents/1.json

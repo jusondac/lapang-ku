@@ -31,6 +31,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_15_024404) do
 
   create_table "memberships", force: :cascade do |t|
     t.string "name"
+    t.string "email"
     t.bigint "type_membership_id", null: false
     t.integer "point"
     t.datetime "created_at", null: false
@@ -79,6 +80,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_15_024404) do
   create_table "rents", force: :cascade do |t|
     t.integer "field_id", null: false
     t.integer "rent_detail_id", null: false
+    t.datetime "start"
+    t.datetime "finish"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
