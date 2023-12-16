@@ -10,14 +10,19 @@
       <%= rent_membership.membership.name %>
     </th>
     <td class="px-6 py-4">
+      <%= rent_membership.membership.type_membership.name %>
+    </td>
+    <td class="px-6 py-4">
+      <%= rent_membership.rent.created_at.strftime("%d %B, %Y") %>
+    </td>
+    <td class="px-6 py-4">
+      <%= rent_membership.rent.field.name %>
+    </td>
+    <td class="px-6 py-4">
+      <%= rent_membership.membership.type_membership.discount %>%
+    </td>
+    <td class="px-6 py-4">
       <%= link_to 'Info', rent_membership.rent, class:"text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" %>
-    </th>
-    <td class="flex items-center px-6 py-4">
-      <% if action_name != "show" %>
-        <%= link_to "Edit", edit_rent_membership_path(rent_membership), class: "font-medium text-blue-600 dark:text-blue-500 hover:underline" %>
-        <%= button_to "Remove" , rent_membership, method: :delete, data: {confirm: "Apakah kamu yakin?"},class:'font-medium text-red-600 dark:text-red-500 hover:underline ms-3'%>
-        <hr class="mt-6">
-      <% end %>
     </td>
   </tr>
 </div>
