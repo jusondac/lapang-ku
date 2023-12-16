@@ -3,7 +3,7 @@ class MembershipsController < ApplicationController
 
   # GET /memberships or /memberships.json
   def index
-    @memberships = Membership.all
+    @pagy, @memberships = pagy(Membership.all)
   end
 
   # GET /memberships/1 or /memberships/1.json
@@ -58,13 +58,14 @@ class MembershipsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_membership
-      @membership = Membership.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def membership_params
-      params.require(:membership).permit(:name, :type_membership_id, :point)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_membership
+    @membership = Membership.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def membership_params
+    params.require(:membership).permit(:name, :type_membership_id, :point)
+  end
 end
