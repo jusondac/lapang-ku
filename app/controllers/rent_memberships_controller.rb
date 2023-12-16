@@ -3,7 +3,7 @@ class RentMembershipsController < ApplicationController
 
   # GET /rent_memberships or /rent_memberships.json
   def index
-    @rent_memberships = RentMembership.all
+    @pagy, @rent_memberships = pagy(RentMembership.all)
   end
 
   # GET /rent_memberships/1 or /rent_memberships/1.json
@@ -58,13 +58,14 @@ class RentMembershipsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_rent_membership
-      @rent_membership = RentMembership.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def rent_membership_params
-      params.require(:rent_membership).permit(:membership_id, :rent_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_rent_membership
+    @rent_membership = RentMembership.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def rent_membership_params
+    params.require(:rent_membership).permit(:membership_id, :rent_id)
+  end
 end
