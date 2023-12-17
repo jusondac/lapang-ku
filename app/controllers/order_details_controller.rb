@@ -3,7 +3,7 @@ class OrderDetailsController < ApplicationController
 
   # GET /order_details or /order_details.json
   def index
-    @order_details = OrderDetail.all
+    @pagy, @order_details = pagy(OrderDetail.all)
   end
 
   # GET /order_details/1 or /order_details/1.json
@@ -58,13 +58,14 @@ class OrderDetailsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_order_detail
-      @order_detail = OrderDetail.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def order_detail_params
-      params.require(:order_detail).permit(:order_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_order_detail
+    @order_detail = OrderDetail.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def order_detail_params
+    params.require(:order_detail).permit(:order_id)
+  end
 end

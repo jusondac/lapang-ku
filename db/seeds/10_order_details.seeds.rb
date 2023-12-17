@@ -1,9 +1,18 @@
-Order.all.pluck(:id).each do |order|
-    discount    = order.rent.rent_detail&.membership.discount || 0
-    price       = order.rent.field.field_type.price
-    hours       = order.rent.rent_detail.hours
-    subtotal    = price * hours
-    OrderDetail.create(
-        order_id: order.id
-    )
+Order.all.each do |order|
+  rent_detail = order.rent.rent_detail
+  membership = rent_detail.membership_id? ? rent_detail.membership : nil
+  discount = membership ? membership.type_membership.discount : 0
+  price = order.rent.field.field_type.price
+  hours = order.rent.rent_detail.hours
+  subtotal = price * hours
+  discount = (discount.to_f / 100) * subtotal
+  tax = 1000
+  total = (subtotal - discount) + tax
+  OrderDetail.create(
+    order_id: order.id,
+    total: total,
+    tax: tax,
+    subtotal: subtotal,
+    discount: discount,
+  )
 end
