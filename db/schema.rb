@@ -41,6 +41,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_15_024404) do
 
   create_table "order_details", force: :cascade do |t|
     t.bigint "order_id", null: false
+    t.integer "total"
+    t.integer "tax"
+    t.integer "subtotal"
+    t.integer "discount"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["order_id"], name: "index_order_details_on_order_id"
