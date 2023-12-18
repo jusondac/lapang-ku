@@ -13,16 +13,16 @@
       <%= rent.field.field_type.name %>
     </td>
     <td class="px-6 py-4">
-      <%= rent.rent_detail&.behalf %>
+      <%= rent.hours %> Hours
     </td>
     <td class="px-6 py-4">
       <%= rent.created_at.strftime("%d %B, %Y") %>
     </td>
     <td class="px-6 py-4">
-      <%= rent.start.strftime("%I:%M %p") %>
+      <%= rent.start.localtime.strftime("%H:%M") %>
     </td>
     <td class="px-6 py-4">
-      <%= rent.finish.strftime("%I:%M %p") %>
+      <%= rent.finish.localtime.strftime("%H:%M") %>
     </td>
     <td class="flex items-center px-6 py-4">
       <% if action_name != "show" %>

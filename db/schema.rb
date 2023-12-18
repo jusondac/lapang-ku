@@ -66,9 +66,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_15_024404) do
   end
 
   create_table "rent_details", force: :cascade do |t|
-    t.integer "hours"
     t.bigint "membership_id"
     t.string "behalf"
+    t.integer "rent_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["membership_id"], name: "index_rent_details_on_membership_id"
@@ -83,9 +83,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_15_024404) do
 
   create_table "rents", force: :cascade do |t|
     t.integer "field_id", null: false
-    t.integer "rent_detail_id", null: false
     t.datetime "start"
     t.datetime "finish"
+    t.integer "hours"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

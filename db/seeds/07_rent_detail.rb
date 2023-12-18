@@ -8,7 +8,7 @@ if RentDetail.all.blank?
     RentDetail.create(
       hours: rand(1..4),
       membership_id: data&.id,
-      behalf: data.nil? ? Faker::Name.name : data.name,
+      behalf: data.nil? ? Faker::Name.name : data.name
     )
   }
 end

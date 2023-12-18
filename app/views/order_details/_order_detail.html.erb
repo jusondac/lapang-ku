@@ -10,7 +10,7 @@
       <%= order_detail.order.rent.created_at.strftime("%d %B, %Y") %>
     </th>
     <td class="px-6 py-4">
-      <%= order_detail.order.status %>
+      <span class="<%= status_bg(order_detail.order.status.to_sym) %> text-xs font-medium me-2 px-2.5 py-0.5 rounded"><%= order_detail.order.status %></span>
     </td>
     <td class="px-6 py-4">
       <%= number_to_currency(order_detail.subtotal, unit: 'Rp.') %>
