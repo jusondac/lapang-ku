@@ -3,7 +3,7 @@ Order.all.each do |order|
   membership = rent_detail.membership_id? ? rent_detail.membership : nil
   discount = membership ? membership.type_membership.discount : 0
   price = order.rent.field.field_type.price
-  hours = order.rent.rent_detail.hours
+  hours = order.rent.hours
   subtotal = price * hours
   discount = (discount.to_f / 100) * subtotal
   tax = 1000
