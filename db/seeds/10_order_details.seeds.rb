@@ -6,7 +6,6 @@ Order.all.each do |order|
   hours = order.rent.hours
   subtotal = price * hours
   discount = (discount.to_f / 100) * subtotal
-  tax = 1000
   total = (subtotal - discount) + tax
   OrderDetail.create(
     order_id: order.id,
