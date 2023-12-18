@@ -10,7 +10,6 @@ unless Rent.all.blank?
 
     data = eval(compare_data[rand(0..1)])
     RentDetail.create(
-      hours: rand(1..4),
       membership_id: data&.id,
       behalf: data.nil? ? Faker::Name.name : data.name,
       rent_id: rent.id,

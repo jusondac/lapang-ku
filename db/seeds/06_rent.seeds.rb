@@ -12,6 +12,7 @@ date_finish = DateTime.now.end_of_week
       Rent.create(
         field_id: field.id,
         start: start,
+        rent_date: date,
         finish: finish,
         hours: hour,
       )
