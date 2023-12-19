@@ -3,7 +3,8 @@ class FieldTypesController < ApplicationController
 
   # GET /field_types or /field_types.json
   def index
-    @pagy, @field_types = pagy(FieldType.all)
+    @q = FieldType.all.ransack(params[:q])
+    @pagy, @field_types = pagy(@q.result(distinct: true))
   end
 
   # GET /field_types/1 or /field_types/1.json
