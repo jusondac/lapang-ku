@@ -26,8 +26,7 @@
     </td>
     <td class="flex items-center px-6 py-4">
       <% if action_name != "show" %>
-        <%= link_to "Edit", edit_membership_path(membership), class: "font-medium text-blue-600 dark:text-blue-500 hover:underline" %>
-        <%= button_to "Remove" , membership, method: :delete, data: {confirm: "Apakah kamu yakin?"},class:'font-medium text-red-600 dark:text-red-500 hover:underline ms-3'%>
+        <%= link_to "Lihat", membership, class: "font-medium text-blue-600 dark:text-blue-500 hover:underline" %>
         <hr class="mt-6">
       <% end %>
     </td>
