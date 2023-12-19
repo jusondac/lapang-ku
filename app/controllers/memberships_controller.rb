@@ -3,7 +3,8 @@ class MembershipsController < ApplicationController
 
   # GET /memberships or /memberships.json
   def index
-    @pagy, @memberships = pagy(Membership.all)
+    @q = Membership.all.ransack(params[:q])
+    @pagy, @memberships = pagy(@q.result(distinct: true))
   end
 
   # GET /memberships/1 or /memberships/1.json
