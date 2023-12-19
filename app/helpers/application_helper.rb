@@ -17,8 +17,8 @@ module ApplicationHelper
 
   def ren_nav(navigation)
     navigation = navigation.transform_keys({
-      
-    })
+ # wait for code
+      })
     return navigation
   end
 
