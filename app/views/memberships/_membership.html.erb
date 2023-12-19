@@ -6,11 +6,8 @@
         <label for="checkbox-table-search-1" class="sr-only">checkbox</label>
       </div>
     </td>
-    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white flex">
-      <img class="w-5 h-5 rounded-full" src="https://source.unsplash.com/1200x800/?male/<%= membership.id %>">
-      <div class="ps-3">
-        <div class="text-base font-semibold"><%= membership.name %></div>
-      </div>
+    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+      <div class="text-base font-semibold"><%= membership.name %></div>
     </th>
     <td class="px-6 py-4">
       <%= membership.type_membership.name %>
