@@ -15,7 +15,6 @@
     <%= number_to_currency(field.field_type.price, unit:'Rp.') %>
   </td>
   <td class="flex items-center px-6 py-4">
-    <%= link_to "Edit", edit_field_path(field), class: "font-medium text-blue-600 dark:text-blue-500 hover:underline" %>
-    <%= button_to "Remove" , field, method: :delete, data: {confirm: "Apakah kamu yakin?"},class:'font-medium text-red-600 dark:text-red-500 hover:underline ms-3'%>
+    <%= link_to "Lihat", field, class: "font-medium text-blue-600 dark:text-blue-500 hover:underline" %>
   </td>
 </tr>
