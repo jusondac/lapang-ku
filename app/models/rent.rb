@@ -1,5 +1,7 @@
 class Rent < ApplicationRecord
   scope :total_rent, -> { all.count }
+  scope :rent_of_day, ->(date) {where(start: date.beginning_of_day..date.end_of_day)}
+  # scope :rent_of_week ->(date) {}
   # Ex:- scope :active, -> {where(:active => true)}
   belongs_to :field
   has_one :rent_detail

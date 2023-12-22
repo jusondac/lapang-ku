@@ -115,4 +115,18 @@
     <!-- End Card -->
   </div>
   <!-- End Grid -->
+  <div class=" border border-gray-200 shadow-sm rounded-xl overflow-hidden dark:border-gray-700 mt-5 w-1/2 p-5">
+    <div class="flex">
+      <% @dates.each do |date| %>
+        <div class="w-20 text-center border">
+          <%= date.strftime('%d/%m') %>
+          <div class="w-full border flex fl ex-col">
+            <% Rent.rent_of_day(date).each do |rent| %>
+              <div><%= rent.id %></div>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
