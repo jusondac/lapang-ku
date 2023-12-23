@@ -118,8 +118,11 @@
   <div class=" border border-gray-200 shadow-sm rounded-xl overflow-hidden dark:border-gray-700 mt-5 w-1/2 p-5">
     <div class="flex">
       <% @dashboard.result[:date][:range].each do |date| %>
-        <%= date.strftime("%d/%m") %><br>
-        <%= t(date.strftime("%A")) %>
+        <div class="w-24 flex flex-col text-center border"><%= date.strftime("%a") %>
+          <% hours_on_date(date).each do |time| %>
+            <span class="text-sm <%= on_book(time) %>"><%= time.strftime('%H:%M') %></span>
+          <% end %>
+        </div>
       <% end %>
     </div>
   </div>

@@ -1,6 +1,5 @@
 class HomeController < ApplicationController
   def index
-    @dashboard = Dashboard::DashboardHandler.new
-    
+    @dashboard = Dashboard::DashboardHandler.new    
   end
 end

@@ -54,5 +54,6 @@ module ApplicationHelper
       hours << start 
       start += 1.hours
     end
+    return hours
   end
 end
