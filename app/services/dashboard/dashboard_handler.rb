@@ -1,10 +1,11 @@
 class Dashboard::DashboardHandler
   attr_accessor :result
+  attr_accessor :rent
 
   def initialize
     @result = {}
     self.weeks_date
-    self.hours_list
+    self.rent
   end
 
   def weeks_date
@@ -13,7 +14,13 @@ class Dashboard::DashboardHandler
     @result[:date] = {start: start, finish: finish, range: (start..finish).to_a}
   end
 
-  def hours_list
-    
+  def get_rent_by(date)
+    @rent.map { |rent|
+
+    }
+  end
+
+  def rent
+    @result[:rent] = @rent = Rent.all
   end
 end
