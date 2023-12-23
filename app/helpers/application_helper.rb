@@ -41,4 +41,18 @@ module ApplicationHelper
     when :waiting_payment then "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300".html_safe
     end
   end
+
+  def t(params)
+    I18n.t params
+  end
+
+  def hours_on_date(date)
+    start = date.beginning_of_day
+    finish = date.end_of_day
+    hours = []
+    while start <= finish do
+      hours << start 
+      start += 1.hours
+    end
+  end
 end

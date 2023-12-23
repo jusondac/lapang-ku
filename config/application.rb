@@ -10,7 +10,12 @@ module LapangKu
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
+    # I18n.load_path += Dir[Rails.root.join("lib", "locale", "*.{rb,yml}")]
+    # Permitted locales available for the application
+    I18n.available_locales = [:en, :id]
 
+    # Set default locale to something other than :en
+    I18n.default_locale = :id
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
