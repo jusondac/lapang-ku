@@ -9,9 +9,9 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
-  <body>
+  <body class="dark:bg-gray-900 dark:text-white">
     <%= render 'layouts/navbar' %>
-    <main class="container mx-auto pt-32 px-5 flex">
+    <main class="container mx-auto pt-32 px-5 flex ">
       <%= yield %>
     </main>
     <!-- Toast -->
