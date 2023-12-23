@@ -15,8 +15,10 @@ class Dashboard::DashboardHandler
   end
 
   def get_rent_by(date)
+    res = []
     @rent.map { |rent|
-
+      d = DateTime.parse((rent.rent_date.localtime).to_s)
+      res << rent if d.eql?(date)
     }
   end
 
