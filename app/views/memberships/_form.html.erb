@@ -17,10 +17,6 @@
     <%= form.label :type_membership_id %>
     <%= form.collection_select :type_membership_id, TypeMembership.all, :id, :name, {prompt: "choose field type"}, class:'block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full' %>
   </div>
-  <div class="my-5">
-    <%= form.label :point %>
-    <%= form.number_field :point, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
   <div class="inline">
     <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
   </div>

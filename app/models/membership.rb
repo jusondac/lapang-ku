@@ -4,6 +4,12 @@ class Membership < ApplicationRecord
   # Ex:- scope :active, -> {where(:active => true)}
   belongs_to :type_membership
 
+  before_create :set_point
+
+  def set_point
+    self.point = 0
+  end
+
   def self.ransackable_attributes(auth_object = nil)
     %w[name created_at updated_at]
   end
