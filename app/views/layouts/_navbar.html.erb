@@ -70,12 +70,11 @@
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
               </svg>
             </button>
-            <!-- Dropdown menu -->
-            <div id="<%= nav_str.downcase %>" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+            <div id="<%= nav_str.downcase %>" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-800 border dark:border-gray-700">
               <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="<%= nav_str.downcase %>Button">
                 <% nav_path.each do |ns, np|%>
                   <li>
-                    <%= link_to ns, eval(np), class:'block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white' %>
+                    <%= link_to ns, eval(np), class:'block transition-all px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white' %>
                   </li>
                 <% end %>
               </ul>
