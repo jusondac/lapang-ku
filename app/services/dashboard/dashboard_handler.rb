@@ -1,28 +1,32 @@
 class Dashboard::DashboardHandler
-  attr_accessor :result
+  attr_accessor :date
   attr_accessor :rent
 
   def initialize
-    @result = {}
-    self.weeks_date
-    self.rent
-  end
-
-  def weeks_date
     start = DateTime.now.beginning_of_week
     finish = DateTime.now.end_of_week
-    @result[:date] = {start: start, finish: finish, range: (start..finish).to_a}
+    @date = {}
+    @rent = Rent.all.select { |x| 
+      x.start.between?(start, finish) 
+    }
+    set_date
   end
 
-  def get_rent_by(date)
-    res = []
-    @rent.map { |rent|
-      d = DateTime.parse((rent.rent_date.localtime).to_s)
-      res << rent if d.eql?(date)
+  def set_date
+    date = DateTime.now
+    # setting up current week
+    start = date.beginning_of_week
+    finish = date.end_of_week
+    # setting up each day for a week
+    # and set into an Hash
+    (start..finish).to_a.each { |date|
+      week_date(date)
     }
   end
 
-  def rent
-    @result[:rent] = @rent = Rent.all
+  def week_date(date)
+    @date[date] = @rent.select { |x|
+      x.start > date.beginning_of_day && x.finish < date.end_of_day
+    }
   end
 end

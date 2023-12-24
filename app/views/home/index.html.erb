@@ -2,13 +2,16 @@
   <div class="text-center border border-gray-200 shadow-sm rounded-xl overflow-hidden dark:border-gray-700 w-1/2 p-5">
     <%= DateTime.now.strftime("%d %B") %>
     <div class="flex h-96">
-      <% @dashboard.result[:date][:range].each do |date| %>
-        <div class="w-24"><%= date.strftime("%a") %>
-          <div class="flex flex-col overflow-scroll h-96">
-            <%= @dashboard.get_rent_by(date)  %>
+      <div class="flex w-full overflow-scroll gap-2 h-96">
+        <% @dashboard.date.each do |key, date| %>
+          <div class="w-1/2 flex flex-col gap-2">
+            <div class="border-b-2 border-gray-300 dark:border-gray-800"><%= key.strftime("%a") %></div>
+            <% date.each do |rent| %>
+              <%= link_to rent.start.localtime.strftime("%H")+"-"+rent.finish.localtime.strftime("%H"), rent, class:'rounded hover:bg-blue-900 transition-all bg-gray-800' %>
+            <% end %>
           </div>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
   <div class="flex border border-gray-200 shadow-sm h-fit rounded-xl overflow-hidden dark:border-gray-700">
