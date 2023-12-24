@@ -11,11 +11,11 @@ module ApplicationHelper
     navigation = Hash[[navigation_alias, navigation].transpose]
     # {:Beranda=>"root_path", "Order details "=>"order_details_path", .. }
     navigation = add_nav(navigation)
-    navigation = ren_nav(navigation)
+    navigation = rename_nav(navigation)
     return navigation
   end
 
-  def ren_nav(navigation)
+  def rename_nav(navigation)
     navigation = navigation.transform_keys({
  # wait for code
       })
