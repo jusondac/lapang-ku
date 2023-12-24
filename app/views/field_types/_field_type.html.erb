@@ -1,12 +1,14 @@
 <div id="<%= dom_id field_type %>">
-  <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-      <%= field_type.name %>
-    </th>
-    <td class="px-6 py-4">
+  <tr class="hover:dark:bg-gray-800 transition-all">
+    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">
+      <div class="text-base font-semibold">
+        <%= field_type.name %>
+      </div>
+    </td>
+    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">
       <%= number_to_currency(field_type.price, unit:'Rp.') %>
-    </th>
-    <td class="flex items-center px-6 py-4">
+    </td>
+    <td class="px-6 py-4 whitespace-nowrap flex justify-end text-sm font-medium">
       <%= link_to  field_type, class: "font-medium text-blue-600 dark:text-blue-500 hover:underline" do %>
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" data-slot="icon" class="w-5 h-5">
           <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
@@ -16,3 +18,4 @@
     </td>
   </tr>
 </div>
+
