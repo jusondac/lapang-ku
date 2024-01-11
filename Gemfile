@@ -79,7 +79,3 @@ group :test do
 
 end
 
-
-gem "rails-i18n", "~> 7.0"
-
-gem "i18n-timezones", "~> 1.4"

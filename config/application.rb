@@ -1,5 +1,5 @@
 require_relative "boot"
-
+# require "i18n"
 require "rails/all"
 
 # Require the gems listed in Gemfile, including any gems
@@ -13,9 +13,11 @@ module LapangKu
     # I18n.load_path += Dir[Rails.root.join("lib", "locale", "*.{rb,yml}")]
     # Permitted locales available for the application
     # I18n.available_locales = [:en, :id]
-
+    # config.i18n.available_locales = %i[de de_en]
     # Set default locale to something other than :en
-    # I18n.default_locale = :id
+    # config.i18n.default_locale = :en
+    # config.i18n.locale = :en
+    # Faker::Config.locale = 'en'
     config.generators do |g|
       g.orm :active_record, primary_key_type: :uuid
     end
