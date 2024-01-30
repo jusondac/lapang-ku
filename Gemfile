@@ -79,3 +79,6 @@ group :test do
 
 end
 
+
+gem "wicked_pdf", "~> 2.7"
+gem "wkhtmltopdf-binary", "~> 0.12.6"

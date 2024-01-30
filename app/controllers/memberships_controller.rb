@@ -11,6 +11,15 @@ class MembershipsController < ApplicationController
   def show
   end
 
+  def membership_pdf
+    @memberships = Membership.all
+    respond_to do |format|
+      format.pdf do
+        render pdf: "file pdf", template: "memberships/memberships_pdf", formats: [:html]
+      end
+    end
+  end
+
   # GET /memberships/new
   def new
     @membership = Membership.new

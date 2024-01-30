@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Appname</title>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= wicked_pdf_stylesheet_link_tag "pdf" %>
+    <style>
+      table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+          }
+
+          th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+          }
+
+          th {
+            background-color: #f2f2f2;
+          }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div>
+      <h1 class="text-gray-300">Laporan Membership</h1>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Nama</th>
+          <th>Email</th>
+          <th>Jenis Membership</th>
+          <th>Point</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @memberships.each do |member| %>
+          <tr>
+            <td><%= member.name %></td>
+            <td><%= member.email %></td>
+            <td><%= member.type_membership.name %></td>
+            <td><%= member.point %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <div class="statistics">
+      <h3>Statistik</h3>
+      <p>Jumlah Member: <%= @memberships.count %></p>
+      <!-- Tambahkan statistik lainnya jika diperlukan -->
+    </div>
+  </body>
+</html>

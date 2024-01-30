@@ -5,7 +5,11 @@ Rails.application.routes.draw do
   resources :rent_details
   resources :rents
   resources :rent_memberships
-  resources :memberships
+  resources :memberships do
+    collection do
+      get :membership_pdf
+    end
+  end
   resources :type_memberships
   resources :fields
   resources :field_types
